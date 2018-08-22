@@ -7,13 +7,13 @@ CREATE TABLE users(
     user_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     pass VARCHAR(100) NOT NULL
-)
+);
 
 INSERT INTO users (user_name, email, pass) VALUES 
 (Armand, armandl@email.com, password12)
 (Simon, simon@email.com, password12)
 (Eve, eve@email.com, password12)
-(LikeMike, likemike@email.com, password12)
+(LikeMike, likemike@email.com, password12);
 
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
@@ -35,4 +35,4 @@ CREATE TABLE topics (
 );
 
 INSERT topics (board_id, user_id, content) VALUES 
-(01, 01, )
+(01, 01, 'stop cake')
