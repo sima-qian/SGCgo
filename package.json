@@ -34,6 +34,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-validator": "^5.3.0",
-    "pg-promise": "^8.4.6"
+    "pg-promise": "^8.4.6",
+    "serve-favicon": "^2.5.0"
   }
 }
