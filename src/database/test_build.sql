@@ -31,8 +31,9 @@ CREATE TABLE topics (
     id SERIAL PRIMARY KEY,
     board_id INTEGER REFERENCES boards(id),
     user_id INTEGER REFERENCES users(id),
-    content TEXT
+    content TEXT,
+    sgc INTEGER NOT NULL
 );
 
 INSERT topics (board_id, user_id, content) VALUES 
-(01, 01, 'stop cake')
+(01, 01, 'stop cake', 1)
