@@ -9,9 +9,11 @@ CREATE TABLE users(
     pass VARCHAR(100) NOT NULL
 );
 
+INSERT INTO users (user_name, email ,pass) VALUES ('admin', 'admin@admin.com', 'pass123');
+
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
-    board_name VARCHAR(100) NOT NULL,
+    board_name VARCHAR(100),
     user_id INTEGER REFERENCES users(id)
 );
 
