@@ -10,8 +10,16 @@ Stop Go Continue - now digitally available so we can do it in the park :>)
 
 1. `$ git clone https://github.com/dupreesi/sgcGO.git`
 2. `$ npm i`
-3. Create a `config.env` file in your project root containing a DATABASE_URL variable with a postgres:// URL to a local database (DB_URL=postgres://user:password@localhost:port/database_name)
-4. Build the database: `$ psql -f "src/databaseb/db_build.sql" YOUR_DATABASE`
+3. Go into PGCLI or PSQL and  enter the following: 
+
+
+1. `CREATE DATABASE [db_name];` `
+2. `CREATE USER [user_name] WITH SUPERUSER PASSWORD ['password'];`
+3. `ALTER DATABASE [db_name] OWNER TO [user_name];`
+`
+
+4. Create a `config.env` file in your project root containing a DATABASE_URL variable with a postgres:// URL to a local database (DB_URL=postgres://user:password@localhost:port/database_name)
+5. Build the database: `$ psql -f "src/databaseb/db_build.sql" YOUR_DATABASE`
 6. Run that thing:`$ npm run dev`
 
 ## USER STORIES
