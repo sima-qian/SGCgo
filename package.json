@@ -4,7 +4,7 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_ENV=test && nyc tape ./test/*.js | tap-spec",
+    "test": "NODE_ENV=test nyc tape ./test/*.js | tap-spec",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "nodemon src/index.js"
   },
