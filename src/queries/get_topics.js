@@ -7,7 +7,6 @@ exports.byId = id =>
       [id],
       (err, res) => {
         if (err) return reject(err);
-        console.log(res);
         resolve(res.rows);
       }
     );
