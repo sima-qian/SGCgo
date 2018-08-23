@@ -17,7 +17,7 @@ INSERT INTO users (user_name, email, pass) VALUES
 
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
-    board_name VARCHAR(100) NOT NULL UNIQUE,
+    board_name VARCHAR(100),
     user_id INTEGER REFERENCES users(id)
 );
 

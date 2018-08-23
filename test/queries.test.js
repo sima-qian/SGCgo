@@ -2,6 +2,7 @@ const tape = require("tape");
 const runDbTestBuild = require("../src/database/test_build");
 const getTopics = require("../src/queries/get_topics");
 const addTopic = require("../src/queries/add_topic");
+const createBoard = require("../src/queries/create_board")
 
 tape("tape is running", t => {
   t.equal(2 + 2, 4, "2 plus 2 is 4");
@@ -80,3 +81,12 @@ tape("can add a topic to a board", t => {
     })
   );
 });
+
+tape("Create a board with a ID", t =>{
+  runDbTestBuild().then(
+    createBoard().then(res => {
+      t.equal(res.rows[0].id, 5, 'New board has the ID of 5 ')
+      t.end()
+    })
+  )
+})
