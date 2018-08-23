@@ -1,7 +1,7 @@
-const {Pool} = require('pg')
-const url = require('url')
-require('env2')('../../config.env')
-
+const { Pool } = require('pg');
+const url = require('url');
+const env = require('env2');
+env('./config.env'); // env starts in root so doesn't need two periods
 const DB_URL = process.env.DB_URL
 
 if (process.env.NODE_ENV === 'test') {
@@ -24,6 +24,6 @@ const options = {
   password,
   ssl: params.hostname !== 'localhost'
 }
- console.log(options)
+console.log(options)
 
 module.exports = new Pool(options)
