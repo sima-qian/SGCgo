@@ -7,7 +7,7 @@ tape("Home route", t => {
     .get("/")
     .expect(200)
     .end(err => {
-      t.error(err, "home route returns 200");
+      t.error(err, "home route should return 200");
       t.end();
     });
 });
@@ -17,7 +17,7 @@ tape("Board route", t => {
     .get("/board/1")
     .expect(200)
     .end(err => {
-      t.error(err, "/board/1 returns 200");
+      t.error(err, "route /board/1 should return 200");
       t.end();
     });
 });

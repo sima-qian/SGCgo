@@ -48,29 +48,14 @@ tape("Can get topics relating to a board by board name", t => {
   );
 });
 
-// tape("getTopics function can handle errors", t => {
-//   runDbTestBuild().then(
-//     getTopics
-//       .byName("zzzzzzzzzzzzzzzzzzzz")
-//       .then(res => {
-//         t.equal(1, 0, "promise should not be resolved");
-//         t.end();
-//       })
-//       .catch(error => {
-//         t.ok(error, "should get error");
-//         t.end();
-//       })
-//   );
-// });
-
 tape("Can add topic to board", t => {
-  const topic = {
+  const validTopic = {
     board_id: 1,
     topic: "black pudding",
     sgc: 1
   };
   runDbTestBuild().then(
-    addTopic(topic)
+    addTopic(validTopic)
       .then(res => {
         t.equal(res, null, "should return null");
         t.end();
@@ -83,13 +68,13 @@ tape("Can add topic to board", t => {
 });
 
 tape("Can't add topic to non-existant board", t => {
-  const topic = {
+  const invalidTopic = {
     board_id: 10,
     topic: "black pudding",
     sgc: 1
   };
   runDbTestBuild().then(
-    addTopic(topic)
+    addTopic(invalidTopic)
       .then(res => {
         t.ok(res, "promise should not be resolved");
         t.end();
@@ -105,7 +90,7 @@ tape("Can create a new board", t => {
   runDbTestBuild().then(
     createBoard()
       .then(res => {
-        t.equal(res[0].id, 5, "New board has id of 5 ");
+        t.equal(res.id, 5, "new board should have id of 5 ");
         t.end();
       })
       .catch(err => {
