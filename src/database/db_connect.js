@@ -2,9 +2,10 @@ const { Pool } = require('pg');
 const url = require('url');
 const env = require('env2');
 env('./config.env'); // env starts in root so doesn't need two periods
-const DB_URL = process.env.DB_URL
+let DB_URL = process.env.DB_URL
 
 if (process.env.NODE_ENV === 'test') {
+  console.log("running test environment");
   DB_URL = process.env.TEST_DB_URL
 }
 
