@@ -164,6 +164,7 @@ h1 {
 
 main {
   padding-top: 4rem;
+  background-color: rgba(252, 252, 247, 1);
 }
 
 #container {
@@ -215,6 +216,7 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 8px 0 12px 0;
 }
 
 .header > h2 {
@@ -251,6 +253,27 @@ h2 {
   background: rgba(37, 126, 221, 0.15);
 }
 
+.topic {
+  margin: 4px 8px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+#board--stop .topic {
+  border: 1px solid rgba(188, 50, 50, 1);
+  color: rgba(188, 50, 50, 1);
+}
+
+#board--go .topic {
+  border: 1px solid rgba(137, 186, 31, 1);
+  color: rgba(137, 186, 31, 1);
+}
+
+#board--continue .topic {
+  border: 1px solid rgba(37, 126, 221, 1);
+  color: rgba(37, 126, 221, 1);
+}
+
 #add_topic {
   position: fixed;
   bottom: 0;
@@ -280,25 +303,6 @@ h2 {
 .input_symbol {
   height: 24px;
   width: 24px;
-}
-
-ul > li {
-  padding: 8px;
-  margin: 8px 0;
-  border-radius: 4px;
-  color: #fcfcf7;
-}
-
-#board--stop > ul > li {
-  background: #bc3232;
-}
-
-#board--go > ul > li {
-  background: #89ba1f;
-}
-
-#board--continue > ul > li {
-  background: #257edd;
 }
 
 /*
