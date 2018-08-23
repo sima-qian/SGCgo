@@ -1,8 +1,10 @@
 <div class="board_container">
 
   <section class="board" id="board--stop">
-    <h2>STOP</h2>
-    <img src="image/stop.svg" alt="stop sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--stop">STOP</h2>
+      <img src="image/stop.svg" alt="stop sign" class="header--symbol">
+    </div>
     <ul>
       {{#each stop}}
       <li>{{this.text_content}}</li>
@@ -11,8 +13,10 @@
   </section>
 
   <section class="board" id="board--go">
-    <h2>GO</h2>
-    <img src="image/go.svg" alt="go sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--go">GO</h2>
+      <img src="image/go.svg" alt="go sign" class="header--symbol">
+    </div>
     <ul>
       {{#each go}}
       <li>{{this.text_content}}</li>
@@ -21,8 +25,10 @@
   </section>
 
   <section class="board" id="board--continue">
-    <h2>CONTINUE</h2>
-    <img src="image/continue.svg" alt="continue sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--continue">CONTINUE</h2>
+      <img src="image/continue.svg" alt="continue sign" class="header--symbol">
+    </div>
     <ul>
       {{#each cont}}
       <li>{{this.text_content}}</li>
