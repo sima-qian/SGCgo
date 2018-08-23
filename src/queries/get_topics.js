@@ -1,4 +1,4 @@
-const dbConnection = require("../database/db_connect");
+const dbConnection = require('../database/db_connect');
 
 exports.byId = id =>
   new Promise((resolve, reject) => {
@@ -6,8 +6,8 @@ exports.byId = id =>
       `SELECT * FROM topics WHERE board_id=$1`,
       [id],
       (err, res) => {
-        if (err) reject(err);
-        resolve(res);
+        if (err) return reject(err);
+        resolve(res.rows);
       }
     );
   });
@@ -18,8 +18,8 @@ exports.byName = name =>
       `SELECT * FROM topics WHERE board_id=(SELECT id FROM boards WHERE board_name=$1)`,
       [name],
       (err, res) => {
-        if (err || res.rowCount === 0) return reject("no board found");
-        resolve(res);
+        if (err) return reject('no board found');
+        resolve(res.rows);
       }
     );
   });

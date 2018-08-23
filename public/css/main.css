@@ -115,7 +115,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -150,14 +150,14 @@ nav {
   align-items: center;
   background-color: #0a243f;
   color: #fcfcf7;
-  font-family: "Gugi", sans-serif;
+  font-family: 'Gugi', sans-serif;
 }
 
 #logo {
   margin-left: 8px;
   margin-right: 16px;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 #board_id {
@@ -230,7 +230,7 @@ h2 {
 .board > .board_symbol {
   display: block;
   width: 15%;
-  margin: 8px auto;
+  margin: 8px auto 16px auto;
 }
 
 #board--stop {
@@ -256,13 +256,41 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 8px;
+}
+
+#add_topic > form {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #new_topic {
   height: 2rem;
+  width: 30%;
 }
 
 .input_symbol {
   height: 24px;
   width: 24px;
+}
+
+ul > li {
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  color: #fcfcf7;
+}
+
+#board--stop > ul > li {
+  background: #bc3232;
+}
+
+#board--go > ul > li {
+  background: #89ba1f;
+}
+
+#board--continue > ul > li {
+  background: #257edd;
 }
