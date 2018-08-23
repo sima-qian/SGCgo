@@ -2,6 +2,7 @@
 > Founders and Coders Week 8 project 
 
 ![Travis badge](https://api.travis-ci.org/dupreesi/sgcGO.svg?branch=master)
+[![codecov](https://codecov.io/gh/dupreesi/sgcGO/branch/master/graph/badge.svg)](https://codecov.io/gh/dupreesi/sgcGO)
 
 Stop Go Continue - now digitally available so we can do it in the park :>)
 
