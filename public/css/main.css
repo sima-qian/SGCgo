@@ -115,7 +115,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -150,7 +150,7 @@ nav {
   align-items: center;
   background-color: #0a243f;
   color: #fcfcf7;
-  font-family: 'Gugi', sans-serif;
+  font-family: "Gugi", sans-serif;
 }
 
 #logo {
@@ -243,4 +243,26 @@ h2 {
 
 #board--continue {
   background: rgba(37, 126, 221, 0.25);
+}
+
+#add_topic {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 4rem;
+  background-color: rgba(10, 36, 63, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#new_topic {
+  height: 2rem;
+}
+
+.input_symbol {
+  height: 24px;
+  width: 24px;
 }
