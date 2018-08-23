@@ -1,13 +1,4 @@
 const pgp = require("pg-promise")();
-// const env = require("env2");
-// env("./config.env");
-// let DB_URL = process.env.DB_URL;
-//
-// if (process.env.NODE_ENV === "test") {
-//   DB_URL = process.env.TEST_DB_URL;
-// }
-//
-// if (!DB_URL) throw new Error("Environment variable DB_URL must be set");
 
 const herokuDB = {
   host: process.env.HEROKU_HOST,
@@ -24,7 +15,8 @@ const localDB = {
   database: "sgcgo_private_test",
   max: process.env.DB_MAX_CONNECTIONS || 2,
   user: "simaqian",
-  password: "password123"
+  password: "password123",
+  ssl: false
 };
 
 const connection = process.env.NODE_ENV === "test" ? localDB : herokuDB;
