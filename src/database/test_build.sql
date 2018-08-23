@@ -10,10 +10,10 @@ CREATE TABLE users(
 );
 
 INSERT INTO users (user_name, email, pass) VALUES 
-(Armand, armandl@email.com, password12)
-(Simon, simon@email.com, password12)
-(Eve, eve@email.com, password12)
-(LikeMike, likemike@email.com, password12);
+('Armand', 'armandl@email.com', 'password12'),
+('Simon', 'simon@email.com', 'password12'),
+('Eve', 'eve@email.com', 'password12'),
+('LikeMike', 'likemike@email.com', 'password12');
 
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
@@ -22,18 +22,23 @@ CREATE TABLE boards (
 ); 
 
 INSERT INTO boards (board_name, user_id) VALUES 
-(sgcGO122, 01),
-(a590bd, 02),
-(lkx89sdd, 03),
-(b42sdwe, 04);
+('sgcGO122', 1),
+('a590bd', 2),
+('lkx89sdd', 3),
+('b42sdwe', 4);
 
 CREATE TABLE topics (
     id SERIAL PRIMARY KEY,
     board_id INTEGER REFERENCES boards(id),
     user_id INTEGER REFERENCES users(id),
-    content TEXT,
+    text_content TEXT,
     sgc INTEGER NOT NULL
 );
 
-INSERT topics (board_id, user_id, content) VALUES 
-(01, 01, 'stop cake', 1)
+INSERT INTO topics (board_id, user_id, text_content, sgc) VALUES 
+(01, 01, 'stop: cake', 1),
+(02, 02, 'Go: more Chairs', 2),
+(03, 03, 'Cont: Being awesome', 3),
+(04, 04, 'Stop: being late', 1);
+
+COMMIT;
