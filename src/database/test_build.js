@@ -11,7 +11,7 @@ const runDbTestBuild = () => {
         reject(err);
       } else {
         console.log('All your base is being create');
-        resolve(null, result);
+        resolve(result);
       }
     });
   });
