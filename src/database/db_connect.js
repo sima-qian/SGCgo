@@ -1,26 +1,33 @@
-const { Pool } = require("pg");
-const url = require("url");
-const env = require("env2");
-env("./config.env"); // env starts in root so doesn't need two periods
-let DB_URL = process.env.DB_URL;
+const pgp = require("pg-promise")();
+// const env = require("env2");
+// env("./config.env");
+// let DB_URL = process.env.DB_URL;
+//
+// if (process.env.NODE_ENV === "test") {
+//   DB_URL = process.env.TEST_DB_URL;
+// }
+//
+// if (!DB_URL) throw new Error("Environment variable DB_URL must be set");
 
-if (process.env.NODE_ENV === "test") {
-  DB_URL = process.env.TEST_DB_URL;
-}
-
-if (!DB_URL) throw new Error("Environment variable DB_URL must be set");
-
-const params = url.parse(DB_URL);
-const [username, password] = params.auth.split(":");
-
-const options = {
-  host: params.hostname,
-  port: params.port,
-  database: params.pathname.split("/")[1],
+const herokuDB = {
+  host: process.env.HEROKU_HOST,
+  user: process.env.HEROKU_USER,
+  password: process.env.HEROKU_PW,
+  database: process.env.HEROKU_DB,
   max: process.env.DB_MAX_CONNECTIONS || 2,
-  user: username,
-  password,
-  ssl: params.hostname !== "localhost"
+  ssl: true
 };
 
-module.exports = new Pool(options);
+const localDB = {
+  host: "localhost",
+  port: 5432,
+  database: "sgcgo_private_test",
+  max: process.env.DB_MAX_CONNECTIONS || 2,
+  user: "simaqian",
+  password: "password123"
+};
+
+const connection = process.env.NODE_ENV === "test" ? localDB : herokuDB;
+
+const db = pgp(connection);
+module.exports = db;

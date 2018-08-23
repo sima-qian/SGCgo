@@ -1,13 +1,10 @@
-const fs = require('fs')
-const dbConnection = require('./db_connect')
+const fs = require("fs");
+const dbConnection = require("./db_connect");
 
-const sql = fs.readFileSync(`${__dirname}/build.sql`).toString()
+const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
 
-const runDbBuild = () => {
-  dbConnection.query(sql)
-  .then(res => console.log(res))
-  .catch(err => console.log(err))
-}
-runDbBuild();
+const runDbBuild = () => dbConnection.query(sql);
 
-module.exports = runDbBuild
+// runDbBuild();
+
+module.exports = runDbBuild;
