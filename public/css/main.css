@@ -1,0 +1,268 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  red: #bc3232 rgba(188,50,50,1)
+  green: #89ba1f rgba(137,186,31,1)
+  blue: #257edd rgba(37,126,221,1)
+  black: #0a243f rgba(10,36,63,1)
+  white: #fcfcf7 rgba(252,252,247,1)
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #0a243f;
+  color: #fcfcf7;
+  font-family: "Gugi", sans-serif;
+}
+
+#logo {
+  margin-left: 8px;
+  margin-right: 16px;
+  width: 3rem;
+  height: 3rem;
+}
+
+#board_id {
+  margin-right: 8px;
+  margin-left: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+main {
+  padding-top: 4rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100vh - 4rem);
+}
+
+.landing_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  width: 45vw;
+  height: calc((90vw - 4rem) / 2);
+}
+
+h2 {
+  font-size: 2.827rem;
+}
+
+#plus {
+  font-size: 20rem;
+}
+
+#board_name {
+  font-size: 2rem;
+  width: auto;
+}
+
+.board_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 32px;
+}
+
+.board {
+  width: 30vw;
+  min-height: 80vh;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.board > h2 {
+  text-align: center;
+  color: #0a243f;
+  position: absolute;
+  top: -3000px;
+  left: -3000px;
+}
+
+.board > .board_symbol {
+  display: block;
+  width: 15%;
+  margin: 8px auto;
+}
+
+#board--stop {
+  background: rgba(188, 50, 50, 0.25);
+}
+
+#board--go {
+  background: rgba(137, 186, 31, 0.25);
+}
+
+#board--continue {
+  background: rgba(37, 126, 221, 0.25);
+}
+
+#add_topic {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 4rem;
+  background-color: rgba(10, 36, 63, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#new_topic {
+  height: 2rem;
+}
+
+.input_symbol {
+  height: 24px;
+  width: 24px;
+}
