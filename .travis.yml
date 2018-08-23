@@ -9,6 +9,6 @@ notifications:
 services:
  - postgresql
 before_script:
-  - psql -c 'CREATE DATABASE sgcgo_test;' -U postgres
-  - psql -c "CREATE USER simon WITH PASSWORD 'pw123';" -U postgres
-  - psql -c "ALTER DATABASE sgcgo_test OWNER TO simon;" -U postgres
+  - psql -c 'CREATE DATABASE sgcgo_private_test;' -U postgres
+  - psql -c "CREATE USER simaqian WITH PASSWORD 'password123';" -U postgres
+  - psql -c "ALTER DATABASE sgcgo_private_test OWNER TO simaqian;" -U postgres
