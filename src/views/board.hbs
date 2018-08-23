@@ -3,16 +3,31 @@
   <section class="board" id="board--stop">
     <h2>STOP</h2>
     <img src="image/stop.svg" alt="stop sign" class="board_symbol">
+    <ul>
+      {{#each stop}}
+      <li>{{this.text_content}}</li>
+      {{/each}}
+    </ul>
   </section>
 
   <section class="board" id="board--go">
     <h2>GO</h2>
     <img src="image/go.svg" alt="go sign" class="board_symbol">
+    <ul>
+      {{#each go}}
+      <li>{{this.text_content}}</li>
+      {{/each}}
+    </ul>
   </section>
 
   <section class="board" id="board--continue">
     <h2>CONTINUE</h2>
     <img src="image/continue.svg" alt="continue sign" class="board_symbol">
+    <ul>
+      {{#each cont}}
+      <li>{{this.text_content}}</li>
+      {{/each}}
+    </ul>
   </section>
 
 </div>
