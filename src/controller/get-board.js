@@ -1,4 +1,4 @@
 exports.get = (req, res) => {
-  const { id } = req.params;
-  res.render('board', { id });
+  const { name } = req.params;
+  res.render("board", { name });
 };
