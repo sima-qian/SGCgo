@@ -42,12 +42,18 @@
   <form action="/add" method="POST">
     <input name="board_id" type="hidden" value="{{ name }}">
     <input name="topic" type="text" id="new_topic" placeholder="Add a new topic...">
-    <input type="radio" name="sgc" id="input_stop" value="1" checked>
-    <label for="input-stop"><img src="image/stop.svg" alt="stop sign" class="input_symbol"></label>
-    <input type="radio" name="sgc" id="input-go" value="2">
-    <label for="input-go"><img src="image/go.svg" alt="go sign" class="input_symbol"></label>
-    <input type="radio" name="sgc" id="input_continue" value="3">
-    <label for="input_continue"><img src="image/continue.svg" alt="continue sign" class="input_symbol"></label>
+    <div class="radio">
+      <input type="radio" name="sgc" id="input_stop" value="1" checked>
+      <label for="input-stop"><img src="image/stop.svg" alt="stop sign" class="input_symbol"></label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="sgc" id="input-go" value="2">
+      <label for="input-go"><img src="image/go.svg" alt="go sign" class="input_symbol"></label>
+    </div>
+    <div class="radio">
+      <input type="radio" name="sgc" id="input_continue" value="3">
+      <label for="input_continue"><img src="image/continue.svg" alt="continue sign" class="input_symbol"></label>
+    </div>
     <button type="submit" id="submit-topic'">Submit topic</button>
   </form>
 </footer>
