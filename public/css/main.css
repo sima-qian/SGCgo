@@ -255,6 +255,7 @@ h2 {
   margin: 4px 8px;
   border-radius: 2px;
   padding: 8px;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 #board--stop .topic {
@@ -277,7 +278,7 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 4rem;
+  /* height: 4rem; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -287,32 +288,105 @@ h2 {
 }
 
 #add_topic > form {
-  width: 70%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#new_topic {
+  height: 2rem;
+  border-radius: 2px;
+  background-color: rgba(252, 252, 247, 1);
+  color: rgba(10, 36, 63, 1);
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 1rem;
+}
+
+.input {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-#new_topic {
-  height: 2rem;
-  width: 30%;
-  border-radius: 2px;
-  background-color: rgba(252, 252, 247, 1);
-  color: rgba(10, 36, 63, 1);
-  margin-right: 16px;
-}
-
 .radio {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.radio-button {
+  margin: 8px 8px 0 8px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  margin: 0 16px;
 }
 
 .input_symbol {
-  margin-left: 8px;
   height: 24px;
   width: 24px;
+}
+
+.input_symbol .continue {
+  /* resize */
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + .icon-container {
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+input[type="radio"] + .stop {
+  padding: 7px 7px;
+}
+
+input[type="radio"] + .go {
+  padding: 7px 8px;
+}
+
+input[type="radio"] + .continue {
+  padding: 6px 8px;
+}
+
+input[type="radio"] + .stop:hover {
+  background-color: rgba(188, 50, 50, 0.1);
+}
+
+input[type="radio"] + .go:hover {
+  background-color: rgba(137, 186, 31, 0.1);
+}
+
+input[type="radio"] + .continue:hover {
+  background-color: rgba(37, 126, 221, 0.1);
+}
+
+input[type="radio"]:checked + .stop {
+  padding: 6px 6px;
+  border: 1px solid rgba(188, 50, 50, 1);
+  background-color: rgba(188, 50, 50, 0.1);
+}
+
+input[type="radio"]:checked + .go {
+  padding: 6px 7px;
+  border: 1px solid rgba(137, 186, 31, 1);
+  background-color: rgba(137, 186, 31, 0.1);
+}
+
+input[type="radio"]:checked + .continue {
+  padding: 5px 7px;
+  border: 1px solid rgba(37, 126, 221, 1);
+  background-color: rgba(37, 126, 221, 0.1);
+}
+
+button {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 1rem;
 }
 
 /*
