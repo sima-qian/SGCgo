@@ -40,11 +40,6 @@
 
 <footer id="add_topic">
   <form action="/add" method="POST">
-    <input name="board_id" type="hidden" value="{{ name }}">
-    <div class="input">
-      <input name="topic" type="text" id="new_topic" placeholder="Add a new topic...">
-      <button type="submit" id="submit-topic'">Add</button>
-    </div>
     <div class="radio">
       <div class="radio-button">
         <input type="radio" name="sgc" id="input_stop" value="1" checked>
@@ -65,6 +60,12 @@
         </div>
       </div>
     </div>
+    <input name="board_id" type="hidden" value="{{ name }}">
+    <div class="input">
+      <input name="topic" type="text" id="new_topic" placeholder="Add a new topic..." autocomplete="off">
+      <button type="submit" id="submit-topic'">Submit topic!</button>
+    </div>
+
 
   </form>
 </footer>
