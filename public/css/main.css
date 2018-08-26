@@ -338,7 +338,7 @@ h2 {
 .input button:hover,
 .input button:focus {
   outline-color: rgba(252, 252, 247, 1);
-  background-color: rgba(10, 36, 63, 1);
+  background-color: rgba(10, 36, 63, 0.1);
   color: rgba(252, 252, 247, 1);
   -webkit-transition: background-color 0.2s ease-in, color 0.2s ease-in;
   -moz-transition: background-color 0.2s ease-in, color 0.2s ease-in;
