@@ -1,8 +1,8 @@
 # sgcGO
 > Founders and Coders Week 8 project 
 
-![Travis badge](https://travis-ci.com/sima-qian/sgcGO.svg?branch=master)
-[![codecov](https://codecov.io/gh/sima-qian/sgcGO/branch/master/graph/badge.svg)](https://codecov.io/gh/sima-qian/sgcGO)
+![Travis badge](https://travis-ci.com/sima-qian/SGCgo.svg?branch=master)
+[![codecov](https://codecov.io/gh/sima-qian/SGCgo/branch/master/graph/badge.svg)](https://codecov.io/gh/sima-qian/SGCgo)
 
 Stop Go Continue - now digitally available so we can do it in the park :>)
 
