@@ -4,8 +4,8 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
-    "dev": "NODE_ENV=test nodemon src/index.js",
-    "build": "NODE_ENV=test node src/database/db_build.js",
+    "dev": "nodemon src/index.js",
+    "build": "node src/database/db_build.js",
     "test": "jest"
   },
   "repository": {
