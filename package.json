@@ -29,7 +29,8 @@
       "!test/**",
       "!src/database/db_build.js",
       "!src/database/db_connect.js",
-      "!src/index.js"
+      "!src/index.js",
+      "!public/javascript/main.js"
     ]
   },
   "homepage": "https://github.com/sima-qian/SGCgo/#readme",
