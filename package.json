@@ -30,6 +30,11 @@
       "!src/database/db_build.js",
       "!src/database/db_connect.js",
       "!src/index.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
     ]
   },
   "homepage": "https://github.com/dupreesi/sgcGO#readme",
