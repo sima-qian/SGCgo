@@ -319,6 +319,10 @@ h2 {
 #new_topic:focus {
   background-color: rgba(10, 36, 63, 1);
   outline-color: rgba(252, 252, 247, 1);
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 .input button {
@@ -336,6 +340,10 @@ h2 {
   outline-color: rgba(252, 252, 247, 1);
   background-color: rgba(10, 36, 63, 1);
   color: rgba(252, 252, 247, 1);
+  -webkit-transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  -moz-transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  -o-transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
 .radio {
@@ -365,7 +373,12 @@ input[type="radio"] + .icon-container {
   box-sizing: border-box;
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 2px;
+}
+
+input[type="container"] + .icon-container {
+  background-color: none;
+  border: none;
 }
 
 input[type="radio"] + .stop {
@@ -382,32 +395,56 @@ input[type="radio"] + .continue {
 
 input[type="radio"] + .stop:hover {
   background-color: rgba(188, 50, 50, 0.1);
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 input[type="radio"] + .go:hover {
   background-color: rgba(137, 186, 31, 0.1);
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 input[type="radio"] + .continue:hover {
   background-color: rgba(37, 126, 221, 0.1);
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 input[type="radio"]:checked + .stop {
   padding: 6px 6px;
   border: 1px solid rgba(188, 50, 50, 1);
   background-color: rgba(188, 50, 50, 0.1);
+  -webkit-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -moz-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -o-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  transition: border 0.1s ease-out, padding 0.1s ease-out;
 }
 
 input[type="radio"]:checked + .go {
   padding: 6px 7px;
   border: 1px solid rgba(137, 186, 31, 1);
   background-color: rgba(137, 186, 31, 0.1);
+  -webkit-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -moz-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -o-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  transition: border 0.1s ease-out, padding 0.1s ease-out;
 }
 
 input[type="radio"]:checked + .continue {
   padding: 5px 7px;
   border: 1px solid rgba(37, 126, 221, 1);
   background-color: rgba(37, 126, 221, 0.1);
+  -webkit-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -moz-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  -o-transition: border 0.1s ease-out, padding 0.1s ease-out;
+  transition: border 0.1s ease-out, padding 0.1s ease-out;
 }
 
 /*
