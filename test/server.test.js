@@ -46,11 +46,12 @@ describe("Test pre-existing board path", () => {
 });
 
 describe("Test create new board path", () => {
-  test("/create route returns 302", done => {
+  test("/create route returns 302 to /board/5", done => {
     request(app)
       .get("/create/")
       .then(res => {
         expect(res.statusCode).toBe(302);
+        expect(res.headers.location).toBe("/board/5");
         done();
       });
   });
@@ -100,6 +101,37 @@ describe("Test add topic path", () => {
       .then(res => {
         expect(res.statusCode).toBe(404);
         done(0);
+      });
+  });
+});
+
+describe("Test delete topic route", () => {
+  test("Deleting a valid topic returns 302 back to board", done => {
+    request(app)
+      .post("/delete-topic/")
+      .send(data.validTopicToDelete)
+      .then(res => {
+        expect(res.statusCode).toBe(302);
+        expect(res.headers.location).toBe("/board/1");
+        done();
+      });
+  });
+  test("Deleting a non-existent topic returns 404", done => {
+    request(app)
+      .post("/delete-topic/")
+      .send(data.invalidTopicToDelete)
+      .then(res => {
+        expect(res.statusCode).toBe(404);
+        done();
+      });
+  });
+  test("Trying to delete a topic with invalid data returns an error", done => {
+    request(app)
+      .post("/delete-topic/")
+      .send(data.missingDataTopicToDelete)
+      .then(res => {
+        expect(res.statusCode).toBe(404);
+        done();
       });
   });
 });

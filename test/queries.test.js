@@ -2,6 +2,7 @@ const db = require("../src/database/db_connect");
 const initialiseTestDatabase = require("../src/database/test_build");
 const clearTestDatabase = require("../src/database/test_clear");
 const getTopics = require("../src/queries/get_topics");
+const getBoardIdFromTopic = require("../src/queries/get_board");
 const checkBoard = require("../src/queries/check_board");
 const createBoard = require("../src/queries/create_board");
 const addTopic = require("../src/queries/add_topic");
@@ -62,7 +63,16 @@ describe("Can get topics relating to a board", () => {
   });
 });
 
-describe("Can make new boards", () => {
+describe("Test get board", () => {
+  test("Can get board id from topic id", () => {
+    expect.assertions(1);
+    return getBoardIdFromTopic(1).then(result => {
+      expect(result.board_id).toBe(1);
+    });
+  });
+});
+
+describe("Test create board", () => {
   test("Can create a new board", () => {
     expect.assertions(1);
     return createBoard(1).then(result => {
@@ -71,7 +81,7 @@ describe("Can make new boards", () => {
   });
 });
 
-describe("Test add topic functionality", () => {
+describe("Test add topic", () => {
   test("Can add a new valid topic", () => {
     expect.assertions(1);
     return addTopic(data.validTopic).then(result => {

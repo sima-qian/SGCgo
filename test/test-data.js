@@ -36,6 +36,15 @@ const data = {
     user_id: 1,
     topic: "test",
     sgc: 4
+  },
+  validTopicToDelete: {
+    id: 1
+  },
+  invalidTopicToDelete: {
+    id: 10
+  },
+  missingDataTopicToDelete: {
+    name: "incorrect key"
   }
 };
 
