@@ -4,7 +4,6 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
-    "coverage-backup": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "NODE_ENV=test nodemon src/index.js",
     "build": "node src/database/db_build.js",
     "test": "jest"
@@ -42,7 +41,6 @@
     "eslint-plugin-jest": "^21.22.0",
     "jest": "^23.5.0",
     "nodemon": "^1.18.3",
-    "nyc": "^12.0.2",
     "supertest": "^3.1.0"
   },
   "dependencies": {
