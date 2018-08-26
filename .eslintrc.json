@@ -1,9 +1,11 @@
 {
   "extends": ["node", "prettier"],
+  "plugins": ["jest"],
   "env": {
     "node": true,
     "browser": true,
-    "commonjs": false
+    "commonjs": false,
+    "jest/globals": true
   },
   "rules": {
     "import/no-commonjs": 0,

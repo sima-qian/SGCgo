@@ -4,10 +4,10 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_ENV=test nyc tape ./test/*.js | tap-spec",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "NODE_ENV=test nodemon src/index.js",
-    "build": "node src/database/db_build.js"
+    "build": "node src/database/db_build.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,17 +18,31 @@
   "bugs": {
     "url": "https://github.com/dupreesi/sgcGO/issues"
   },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/.nyc_output/**",
+      "!**/.git/**",
+      "!test/**",
+      "!src/database/db_build.js",
+      "!src/database/db_connect.js",
+      "!src/index.js"
+    ]
+  },
   "homepage": "https://github.com/dupreesi/sgcGO#readme",
   "devDependencies": {
     "codecov": "^3.0.4",
     "eslint": "^5.4.0",
     "eslint-config-node": "^3.0.0",
     "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.5.0",
     "nodemon": "^1.18.3",
     "nyc": "^12.0.2",
-    "supertest": "^3.1.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "supertest": "^3.1.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

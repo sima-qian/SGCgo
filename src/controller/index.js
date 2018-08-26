@@ -1,19 +1,19 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-const landing = require('./landing');
-const getBoard = require('./get-board');
-const errorRoute = require('./error-route');
-const createBoard = require('./create-board');
-const addTopic = require('./add-topic');
-const error = require('./error');
+const landing = require("./landing");
+const getBoard = require("./get-board");
+const errorRoute = require("./error-route");
+const createBoard = require("./create-board");
+const addTopic = require("./add-topic");
+const error = require("./error");
 
-router.get('/', landing.get);
-router.get('/create/', createBoard);
-router.get('/board/:name', getBoard.get);
-router.post('/add/', addTopic);
-router.get('/make_error', errorRoute);
+router.get("/", landing.get);
+router.get("/create/", createBoard);
+router.get("/board/:name", getBoard.get);
+router.post("/add-topic/", addTopic);
+router.get("/make_error", errorRoute);
 router.use(error.client);
 router.use(error.server);
 

@@ -1,9 +1,11 @@
+const checkBoard = require("../queries/check_board");
 const getTopics = require("../queries/get_topics");
 
 exports.get = (req, res, next) => {
   const { name } = req.params;
-  getTopics
+  checkBoard
     .byId(name)
+    .then(result => getTopics.byId(result.id))
     .then(topics => {
       const stop = topics.filter(topic => topic.sgc === 1);
       const go = topics.filter(topic => topic.sgc === 2);

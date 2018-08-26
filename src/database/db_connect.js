@@ -1,3 +1,5 @@
+"use strict";
+
 const pgp = require("pg-promise")();
 
 const herokuDB = {
@@ -13,7 +15,6 @@ const localDB = {
   host: "localhost",
   port: 5432,
   database: "sgcgo_private_test",
-  max: process.env.DB_MAX_CONNECTIONS || 2,
   user: "simaqian",
   password: "password123",
   ssl: false

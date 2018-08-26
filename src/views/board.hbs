@@ -1,31 +1,37 @@
 <div class="board_container">
 
   <section class="board" id="board--stop">
-    <h2>STOP</h2>
-    <img src="image/stop.svg" alt="stop sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--stop">STOP</h2>
+      <img src="image/stop.svg" alt="stop sign" class="header--symbol">
+    </div>
     <ul>
       {{#each stop}}
-      <li>{{this.text_content}}</li>
+      <li class="topic">{{this.text_content}}</li>
       {{/each}}
     </ul>
   </section>
 
   <section class="board" id="board--go">
-    <h2>GO</h2>
-    <img src="image/go.svg" alt="go sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--go">GO</h2>
+      <img src="image/go.svg" alt="go sign" class="header--symbol">
+    </div>
     <ul>
       {{#each go}}
-      <li>{{this.text_content}}</li>
+      <li class="topic">{{this.text_content}}</li>
       {{/each}}
     </ul>
   </section>
 
   <section class="board" id="board--continue">
-    <h2>CONTINUE</h2>
-    <img src="image/continue.svg" alt="continue sign" class="board_symbol">
+    <div class="header">
+      <h2 id="header--continue">CONTINUE</h2>
+      <img src="image/continue.svg" alt="continue sign" class="header--symbol">
+    </div>
     <ul>
       {{#each cont}}
-      <li>{{this.text_content}}</li>
+      <li class="topic">{{this.text_content}}</li>
       {{/each}}
     </ul>
   </section>
@@ -34,14 +40,30 @@
 
 <footer id="add_topic">
   <form action="/add" method="POST">
+    <div class="radio">
+      <div class="radio-button">
+        <input type="radio" name="sgc" id="input_stop" value="1" checked>
+        <div class="icon-container stop">
+          <label for="input_stop"><img src="image/stop.svg" alt="stop sign" class="input_symbol stop"></label>
+        </div>
+      </div>
+      <div class="radio-button">
+        <input type="radio" name="sgc" id="input-go" value="2">
+        <div class="icon-container go">
+          <label for="input-go"><img src="image/go.svg" alt="go sign" class="input_symbol go"></label>
+        </div>
+      </div>
+      <div class="radio-button">
+        <input type="radio" name="sgc" id="input_continue" value="3">
+        <div class="icon-container continue">
+          <label for="input_continue"><img src="image/continue.svg" alt="continue sign" class="input_symbol continue"></label>
+        </div>
+      </div>
+    </div>
     <input name="board_id" type="hidden" value="{{ name }}">
-    <input name="topic" type="text" id="new_topic" placeholder="Add a new topic...">
-    <input type="radio" name="sgc" id="input_stop" value="1" checked>
-    <label for="input-stop"><img src="image/stop.svg" alt="stop sign" class="input_symbol"></label>
-    <input type="radio" name="sgc" id="input-go" value="2">
-    <label for="input-go"><img src="image/go.svg" alt="go sign" class="input_symbol"></label>
-    <input type="radio" name="sgc" id="input_continue" value="3">
-    <label for="input_continue"><img src="image/continue.svg" alt="continue sign" class="input_symbol"></label>
-    <button type="submit" id="submit-topic'">Submit topic</button>
+    <div class="input">
+      <input name="topic" type="text" id="new_topic" placeholder="Add a new topic..." autocomplete="off">
+      <button type="submit" id="submit-topic'">Submit topic!</button>
+    </div>
   </form>
 </footer>
