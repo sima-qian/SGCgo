@@ -4,21 +4,22 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage-backup": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "NODE_ENV=test nodemon src/index.js",
     "build": "node src/database/db_build.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dupreesi/sgcGO.git"
+    "url": "git+https://github.com/sima-qian/SGCgo.git"
   },
   "author": "michael, eve, armand, simon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dupreesi/sgcGO/issues"
+    "url": "https://github.com/sima-qian/SGCgo/issues"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.js",
@@ -30,14 +31,9 @@
       "!src/database/db_build.js",
       "!src/database/db_connect.js",
       "!src/index.js"
-    ],
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text"
     ]
   },
-  "homepage": "https://github.com/dupreesi/sgcGO#readme",
+  "homepage": "https://github.com/sima-qian/SGCgo/#readme",
   "devDependencies": {
     "codecov": "^3.0.4",
     "eslint": "^5.4.0",
