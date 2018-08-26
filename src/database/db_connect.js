@@ -16,8 +16,8 @@ const localDB = {
   port: 5432,
   database: "sgcgo_private_test",
   user: "simaqian",
-  password: "password123",
-  ssl: false
+  password: "password123"
+  // ssl: false
 };
 
 const connection = process.env.NODE_ENV === "test" ? localDB : herokuDB;

@@ -5,6 +5,6 @@ const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
 
 const initialiseDatabase = () => dbConnection.query(sql);
 
-// runDbBuild();
+initialiseDatabase();
 
 module.exports = initialiseDatabase;

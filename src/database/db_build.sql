@@ -9,20 +9,21 @@ CREATE TABLE users(
     pass VARCHAR(100) NOT NULL
 );
 
-INSERT INTO users (user_name, email ,pass) VALUES ('admin', 'admin@admin.com', 'pass123');
+INSERT INTO users (user_name, email, pass) VALUES
+('admin', 'admin@admin.com', 'pass123');
 
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
-    board_name VARCHAR(100),
-    user_id INTEGER REFERENCES users(id)
+    board_name VARCHAR(100) UNIQUE,
+    user_id INTEGER REFERENCES users(id) NOT NULL
 );
 
 CREATE TABLE topics (
     id SERIAL PRIMARY KEY,
-    board_id INTEGER REFERENCES boards(id),
-    user_id INTEGER REFERENCES users(id),
-    text_content TEXT,
-    sgc INTEGER NOT NULL
+    board_id INTEGER REFERENCES boards(id) NOT NULL,
+    user_id INTEGER REFERENCES users(id) NOT NULL,
+    text_content TEXT NOT NULL CHECK (text_content <> ''),
+    sgc INTEGER NOT NULL CONSTRAINT sgc_must_be_greater_than_0 CHECK (sgc > 0), CONSTRAINT sgc_must_be_less_than_4 CHECK (sgc < 4)
 );
 
 COMMIT;
