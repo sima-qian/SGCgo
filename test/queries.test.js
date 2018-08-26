@@ -5,6 +5,7 @@ const getTopics = require("../src/queries/get_topics");
 const checkBoard = require("../src/queries/check_board");
 const createBoard = require("../src/queries/create_board");
 const addTopic = require("../src/queries/add_topic");
+const deleteTopic = require("../src/queries/delete_topic");
 const data = require("./test-data");
 
 beforeEach(() => initialiseTestDatabase());
@@ -99,6 +100,19 @@ describe("Test add topic functionality", () => {
     expect.assertions(1);
     return addTopic(data.invalidTopic4).catch(err => {
       expect(err).toBeTruthy();
+    });
+  });
+});
+
+describe("Can delete topics", () => {
+  test("Can delete an existing topic", () => {
+    deleteTopic.byId(1).then(result => {
+      expect(result.rowCount).toBe(1);
+    });
+  });
+  test("Trying to delete a non-existent topic doesn't return an error", () => {
+    deleteTopic.byId(10).then(result => {
+      expect(result.rowCount).toBe(0);
     });
   });
 });
