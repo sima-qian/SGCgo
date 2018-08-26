@@ -17,8 +17,8 @@ INSERT INTO users (user_name, email, pass) VALUES
 
 CREATE TABLE boards (
     id SERIAL PRIMARY KEY,
-    board_name VARCHAR(100),
-    user_id INTEGER REFERENCES users(id)
+    board_name VARCHAR(100) UNIQUE,
+    user_id INTEGER REFERENCES users(id) NOT NULL
 );
 
 INSERT INTO boards (board_name, user_id) VALUES
@@ -29,21 +29,21 @@ INSERT INTO boards (board_name, user_id) VALUES
 
 CREATE TABLE topics (
     id SERIAL PRIMARY KEY,
-    board_id INTEGER REFERENCES boards(id),
-    user_id INTEGER REFERENCES users(id),
-    text_content TEXT,
-    sgc INTEGER NOT NULL
+    board_id INTEGER REFERENCES boards(id) NOT NULL,
+    user_id INTEGER REFERENCES users(id) NOT NULL,
+    text_content TEXT NOT NULL CHECK (text_content <> ''),
+    sgc INTEGER NOT NULL CONSTRAINT sgc_must_be_greater_than_0 CHECK (sgc > 0), CONSTRAINT sgc_must_be_less_than_4 CHECK (sgc < 4)
 );
 
 INSERT INTO topics (board_id, user_id, text_content, sgc) VALUES
-(01, 01, 'cake', 1),
-(01, 01, 'cheesecake', 1),
-(01, 02, 'chocolate cake', 2),
-(01, 04, 'coffe and walnut', 2),
-(01, 03, 'lemon drizzle', 3),
-(01, 04, 'victoria sponge', 3),
-(02, 02, 'more Chairs', 2),
-(03, 03, 'Being awesome', 3),
-(04, 04, 'being late', 1);
+(1, 1, 'cake', 1),
+(1, 1, 'cheesecake', 1),
+(1, 2, 'chocolate cake', 2),
+(1, 4, 'coffee and walnut', 2),
+(1, 3, 'lemon drizzle', 3),
+(1, 4, 'victoria sponge', 3),
+(2, 2, 'more Chairs', 2),
+(3, 3, 'Being awesome', 3),
+(3, 4, 'being late', 1);
 
 COMMIT;

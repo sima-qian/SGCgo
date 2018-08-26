@@ -1,4 +1,4 @@
-const addTopic = require('../queries/add_topic');
+const addTopic = require("../queries/add_topic");
 
 module.exports = (req, res, next) => {
   addTopic(req.body)

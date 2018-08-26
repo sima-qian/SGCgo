@@ -3,6 +3,6 @@ const dbConnection = require("./db_connect");
 
 const sql = fs.readFileSync(`${__dirname}/test_build.sql`).toString();
 
-const runDbTestBuild = () => dbConnection.query(sql);
+const initialiseTestDatabase = () => dbConnection.query(sql);
 
-module.exports = runDbTestBuild;
+module.exports = initialiseTestDatabase;
