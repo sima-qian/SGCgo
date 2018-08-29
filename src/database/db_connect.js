@@ -7,8 +7,8 @@ const herokuDB = {
   user: process.env.HEROKU_USER,
   password: process.env.HEROKU_PW,
   database: process.env.HEROKU_DB,
-  max: process.env.DB_MAX_CONNECTIONS || 2,
-  ssl: true
+  max: process.env.DB_MAX_CONNECTIONS || 2
+  // ssl: true
 };
 
 const testDB = {
