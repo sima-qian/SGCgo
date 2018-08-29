@@ -27,7 +27,7 @@ const localDB = {
   password: "password123"
 };
 
-const connection = process.env.NODE_ENV === "test" ? testDB : localDB;
+const connection = process.env.NODE_ENV === "test" ? testDB : herokuDB;
 
 const db = pgp(connection);
 module.exports = db;
