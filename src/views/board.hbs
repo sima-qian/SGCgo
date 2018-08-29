@@ -7,7 +7,7 @@
     </div>
     <ul>
       {{#each stop}}
-      <li class="topic">{{this.text_content}}</li>
+      <li class="topic"><input type="checkbox" class="hidden" id={{this.id}}><label for="strikethrough--stop" class="strikethrough strikethrough--stop" checked></label><p>{{this.text_content}}</p><label for="delete--stop" class="delete">&times;</label><button class="hidden delete--stop" id={{this.id}}></button></li>
       {{/each}}
     </ul>
   </section>
@@ -19,7 +19,7 @@
     </div>
     <ul>
       {{#each go}}
-      <li class="topic">{{this.text_content}}</li>
+      <li class="topic"><input type="checkbox" class="hidden" id={{this.id}}><label for="strikethrough--go" class="strikethrough strikethrough--go"></label><p>{{this.text_content}}</p><label for="delete--go" class="delete">&times;</label><button class="hidden delete--go" id={{this.id}}></button></li>
       {{/each}}
     </ul>
   </section>
@@ -31,7 +31,7 @@
     </div>
     <ul>
       {{#each cont}}
-      <li class="topic">{{this.text_content}}</li>
+      <li class="topic"><input type="checkbox" class="hidden" id={{this.id}}><label for="strikethrough--continue" class="strikethrough strikethrough--continue"></label><p>{{this.text_content}}</p><label for="delete--continue" class="delete">&times;</label><button class="hidden delete--continue" id={{this.id}}></button></li>
       {{/each}}
     </ul>
   </section>
