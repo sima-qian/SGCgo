@@ -4,6 +4,7 @@
   "description": "fac week 8 project",
   "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "build": "node src/database/db_build.js",
     "test": "jest"
